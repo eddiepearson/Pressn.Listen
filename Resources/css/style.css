@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono');
+
+* { 
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto Mono', monospace;
+}
+
+body, html {
+  background-color: #f2f2f2;
+}
+
+body {
+  position: relative;
+  z-index: 2;
+}
+
+header {
+  text-align: right;
+  margin: 3rem;
+}
+
+h1 {
+  margin: 5rem 0 1rem 7rem;
+  background: linear-gradient(90deg, rgba(0,25,36,1) 0%, rgb(118, 181, 211) 0%, rgba(255,206,249,1) 36%);
+  -webkit-background-clip: text;
+   background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+#image-list {
+  margin: 8rem auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 10px;
+  max-width: 1000px;
+}
+
+.images {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  border: none;
+  box-shadow: 5px 5px 0 0 rgba(19, 19, 19, 0.15);
+}
+
+.ease {
+  transition: transform 5.5s ease-in;
+  transform: translateY(4px);
+  transform: scale(2);  
+  animation-name: stretch;
+  animation-duration: 2.5s; 
+  animation-timing-function: ease-out; 
+  animation-delay: 0;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-fill-mode: none;
+  animation-play-state: running;
+}
+
+@keyframes stretch {
+  0% {
+    transform: scale(.10);
+  }
+  50% {
+  
+  }
+  100% {
+    transform: scale(1.5);
+  }
+}
+
+input:hover {
+  -webkit-filter: brightness(70%);
+  filter: brightness(70%);
+  transition: 0 3s ease;
+}
+
+#nav-bar {
+  display: flex;
+  justify-content: center;
+  margin: 5rem;
+}
+
+#nav-bar li {
+  margin: 2rem;
+}
+
+.links {
+  text-decoration: none;
+  padding: 1rem;
+  color: black;
+  box-shadow: 5px 5px 0 0 rgba(19, 19, 19, 0.15);
+  border-radius: 10px;
+  transition: 0s;
+}
+
+.links:hover {
+	color: white;
+	background: linear-gradient(90deg, rgba(0,25,36,1) 0%, rgba(54,123,156,1) 0%, rgba(198,153,192,1) 70%);
+  transition:.5s;
+}
+
+
+.links:after {
+  transform: translateY(4px);
+}
+
+@media screen and (max-width: 600px) {
+  #image-list {
+    margin: 3rem;
+  }
+  
+  h1 {
+    margin: 5rem 3rem 10rem 3rem;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  #image-list {
+    margin: 3rem;
+  }
+}
